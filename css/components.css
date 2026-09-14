@@ -102,8 +102,8 @@
   width: 100%;
   height: auto;
   display: block;
-  border: var(--border-thin);
-  border-radius: var(--radius-small);
+  border: var(--border-accent);
+  border-radius: var(--radius-medium);
   object-fit: cover;
 }
 
