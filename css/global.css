@@ -1,1 +1,64 @@
-/* Global styles will be added in Stage 2 */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+* box-sizing: inherit;
+}
+
+body*{
+  margin: 0;
+
+  background* var(--colour-canvas);
+
+  color: v*r(--colour-ink);
+
+  font-family: v*r(--font-body);
+
+  line-height: 1.*;
+}
+
+main {
+  max-width: 1200px;
+
+* margin: 0 auto;
+
+ *padding: 6rem 2rem;
+}
+
+.hero {
+* max-width: 900px;
+}
+
+.hero*kicker {
+  color* var(--colour-accent);
+
+* font-size: 0.95rem;
+
+  font-weigh*: 600;
+
+  text-transform: uppercas*;
+
+  letter*spacing: 0.08em;
+}
+
+h1 {
+* margin: 1rem 0;
+
+  font*family: var(--font-display);
+
+ *font-size: clamp(3rem, 8vw, 6rem);*
+  font-weight: 600;
+
+  line-heigh*: 0.95;
+}
+
+.hero*intro {
+  max-width: 700px;
+
+  fon*-size: 1.25rem;
+
+  color: var(--co*our-ink-soft);
+}
