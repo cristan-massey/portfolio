@@ -1,0 +1,26 @@
+:root {
+
+  --colour-canvas: #F5F2EC;
+  --colour-surface: #FBF9F4;
+
+  --colour-ink: #161616;
+  --colour-ink-soft: #5A5752;
+
+  --colour-line: #D7D1C7;
+
+  --colour-maroon-950: #241115;
+  --colour-maroon-900: #34161D;
+  --colour-maroon-800: #4A1C28;
+  --colour-maroon-700: #652235;
+  --colour-maroon-600: #7D2D44;
+  --colour-maroon-500: #96405A;
+  --colour-maroon-400: #B5647C;
+  --colour-maroon-300: #D08FA0;
+  --colour-maroon-200: #E8C6CF;
+  --colour-maroon-100: #F5E6EA;
+
+  --colour-accent: #652235;
+  --colour-accent-dark: #4A1C28;
+  --colour-accent-light: #E8C6CF;
+
+}
