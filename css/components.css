@@ -1,1 +1,87 @@
-/* Reusable components will be added in later stages */
+/* ==========================================================================
+   COMPONENTS
+   Reusable UI patterns: navigation, hero, buttons, cards etc.
+   Add new components to this file as the site grows.
+   ========================================================================== */
+
+/* --- Site header / navigation ------------------------------------------ */
+
+.site-header {
+  border-bottom: var(--border-thin);
+}
+
+.site-nav {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: var(--space-6) var(--page-gutter);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.site-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--colour-ink);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--colour-ink-soft);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--colour-accent);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--colour-ink);
+  border-bottom: 2px solid var(--colour-accent);
+  padding-bottom: 2px;
+}
+
+.contact-link {
+  color: var(--colour-accent) !important;
+  font-weight: 600;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero {
+  max-width: var(--width-text);
+}
+
+.hero-kicker {
+  color: var(--colour-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+}
+
+.hero h1 {
+  font-size: var(--font-size-h1);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.hero-intro {
+  max-width: 42rem;
+  font-size: var(--font-size-lead);
+  color: var(--colour-ink-soft);
+}
