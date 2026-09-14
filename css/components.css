@@ -24,7 +24,7 @@
 
 .site-name {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.05rem;
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -45,10 +45,11 @@
   text-decoration: none;
   color: var(--colour-ink-soft);
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: var(--colour-accent);
+  color: var(--colour-accent-strong);
 }
 
 .nav-links a[aria-current="page"] {
@@ -59,7 +60,7 @@
 
 .contact-link {
   color: var(--colour-accent) !important;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* --- Hero ---------------------------------------------------------------- */
@@ -78,20 +79,22 @@
 .hero-kicker {
   color: var(--colour-accent);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   margin-bottom: var(--space-4);
 }
 
 .hero h1 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h1);
+  font-weight: 900;
   margin: 0 0 var(--space-6) 0;
 }
 
 .hero-intro {
   max-width: 42rem;
   font-size: var(--font-size-lead);
+  font-weight: 400;
   color: var(--colour-ink-soft);
 }
 
