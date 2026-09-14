@@ -63,7 +63,7 @@
   font-weight: 700;
 }
 
-/* --- Hero ---------------------------------------------------------------- */
+/* --- Hero (homepage) ----------------------------------------------------- */
 
 .hero {
   display: grid;
@@ -102,7 +102,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border: var(--border-accent);
+  border: 3px solid var(--colour-maroon-600);
   border-radius: var(--radius-medium);
   object-fit: cover;
 }
@@ -118,4 +118,133 @@
     max-width: 20rem;
   }
 
+}
+
+/* --- Page header (used on interior pages: About, Experience, etc.) ------ */
+
+.page-header {
+  max-width: var(--width-text);
+  margin-bottom: var(--space-16);
+}
+
+.page-kicker {
+  color: var(--colour-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.page-header h1 {
+  font-size: var(--font-size-h2);
+  font-weight: 900;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.page-lead {
+  font-size: var(--font-size-lead);
+  font-weight: 400;
+  color: var(--colour-ink-soft);
+  max-width: 42rem;
+}
+
+/* --- Section heading (reusable across interior page sections) ---------- */
+
+.section-heading {
+  max-width: var(--width-text);
+  margin-bottom: var(--space-8);
+}
+
+.section-heading .eyebrow {
+  color: var(--colour-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.section-heading h2 {
+  font-size: var(--font-size-h3);
+  font-weight: 800;
+  margin: 0;
+}
+
+/* --- Content section spacing --------------------------------------------- */
+
+.content-section {
+  padding-top: var(--space-24);
+  border-top: var(--border-thin);
+}
+
+.content-section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.prose {
+  max-width: var(--width-text);
+  font-size: var(--font-size-lead);
+  color: var(--colour-ink-soft);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Pull statement (large standalone statement mid-page) --------------- */
+
+.pull-statement {
+  max-width: var(--width-text);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--font-size-h3);
+  color: var(--colour-ink);
+  line-height: 1.25;
+}
+
+.pull-statement span {
+  color: var(--colour-accent);
+}
+
+/* --- Principles grid (About page: Principles / Ways of Working) -------- */
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8) var(--space-12);
+}
+
+@media (max-width: 52rem) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principle {
+  border-top: var(--border-thin);
+  padding-top: var(--space-6);
+}
+
+.principle .principle-number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--colour-accent);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+}
+
+.principle h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.principle p {
+  color: var(--colour-ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
 }
