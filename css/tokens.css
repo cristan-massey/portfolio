@@ -1,13 +1,19 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   This file holds every colour, font, spacing and layout value used across
+   the site. Change a value here and it updates everywhere it's used.
+   ========================================================================== */
+
 :root {
 
+  /* Colour - neutrals */
   --colour-canvas: #F5F2EC;
   --colour-surface: #FBF9F4;
-
   --colour-ink: #161616;
   --colour-ink-soft: #5A5752;
-
   --colour-line: #D7D1C7;
 
+  /* Colour - maroon scale (accent identity) */
   --colour-maroon-950: #241115;
   --colour-maroon-900: #34161D;
   --colour-maroon-800: #4A1C28;
@@ -19,8 +25,45 @@
   --colour-maroon-200: #E8C6CF;
   --colour-maroon-100: #F5E6EA;
 
-  --colour-accent: #652235;
-  --colour-accent-dark: #4A1C28;
-  --colour-accent-light: #E8C6CF;
+  --colour-accent: var(--colour-maroon-700);
+  --colour-accent-dark: var(--colour-maroon-800);
+  --colour-accent-light: var(--colour-maroon-200);
+
+  /* Colour - accessibility */
+  --colour-focus: #0B63CE;
+
+  /* Typography */
+  --font-display: "Newsreader", serif;
+  --font-body: "Inter", sans-serif;
+
+  --font-size-body: 1rem;
+  --font-size-lead: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  --font-size-h3: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  --font-size-h2: clamp(2rem, 1.4rem + 2vw, 3.4rem);
+  --font-size-h1: clamp(2.75rem, 1.5rem + 5vw, 5.5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --width-text: 44rem;
+  --width-content: 72rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+
+  /* Borders / radii */
+  --border-thin: 1px solid var(--colour-line);
+  --radius-small: 0.2rem;
+
+  /* Motion */
+  --duration-standard: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 
 }
