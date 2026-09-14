@@ -23,11 +23,13 @@
 }
 
 .site-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
   text-decoration: none;
   color: var(--colour-ink);
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -63,6 +65,13 @@
 /* --- Hero ---------------------------------------------------------------- */
 
 .hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.hero-content {
   max-width: var(--width-text);
 }
 
@@ -76,7 +85,7 @@
 }
 
 .hero h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h2);
   margin: 0 0 var(--space-6) 0;
 }
 
@@ -84,4 +93,26 @@
   max-width: 42rem;
   font-size: var(--font-size-lead);
   color: var(--colour-ink-soft);
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--border-thin);
+  border-radius: var(--radius-small);
+  object-fit: cover;
+}
+
+/* Stack the hero on narrower screens rather than compressing two columns */
+@media (max-width: 52rem) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    max-width: 20rem;
+  }
+
 }
