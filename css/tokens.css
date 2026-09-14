@@ -6,12 +6,12 @@
 
 :root {
 
-  /* Colour - neutrals */
-  --colour-canvas: #F5F2EC;
-  --colour-surface: #FBF9F4;
-  --colour-ink: #161616;
-  --colour-ink-soft: #5A5752;
-  --colour-line: #D7D1C7;
+  /* Colour - neutrals (dark theme) */
+  --colour-canvas: #0E0D0D;
+  --colour-surface: #191716;
+  --colour-ink: #F5F1EA;
+  --colour-ink-soft: #B0AAA1;
+  --colour-line: #2C2825;
 
   /* Colour - maroon scale (accent identity) */
   --colour-maroon-950: #241115;
@@ -25,22 +25,28 @@
   --colour-maroon-200: #E8C6CF;
   --colour-maroon-100: #F5E6EA;
 
-  --colour-accent: var(--colour-maroon-700);
-  --colour-accent-dark: var(--colour-maroon-800);
-  --colour-accent-light: var(--colour-maroon-200);
+  /* On a dark canvas, lighter maroon tones give the contrast needed for
+     text and links. Darker maroon tones (700/600) work well as solid
+     button backgrounds with light text on top. */
+  --colour-accent: var(--colour-maroon-400);
+  --colour-accent-strong: var(--colour-maroon-300);
+  --colour-accent-solid: var(--colour-maroon-700);
+  --colour-accent-solid-hover: var(--colour-maroon-600);
 
-  /* Colour - accessibility */
-  --colour-focus: #0B63CE;
+  /* Colour - accessibility (brighter blue needed for AA contrast on black) */
+  --colour-focus: #5AA9E6;
 
-  /* Typography */
-  --font-display: "Newsreader", serif;
-  --font-body: "Inter", sans-serif;
+  /* Typography
+     Single family, multiple weights: bold, confident, modern.
+     Hierarchy is created through weight and size, not by mixing typefaces. */
+  --font-display: "Montserrat", sans-serif;
+  --font-body: "Montserrat", sans-serif;
 
   --font-size-body: 1rem;
-  --font-size-lead: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  --font-size-lead: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
   --font-size-h3: clamp(1.4rem, 1.1rem + 1vw, 2rem);
   --font-size-h2: clamp(2rem, 1.4rem + 2vw, 3.4rem);
-  --font-size-h1: clamp(2.75rem, 1.5rem + 5vw, 5.5rem);
+  --font-size-h1: clamp(2.5rem, 1.5rem + 4.5vw, 4.75rem);
 
   /* Spacing */
   --space-1: 0.25rem;
