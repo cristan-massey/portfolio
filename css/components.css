@@ -503,5 +503,50 @@
   color: var(--colour-ink-soft);
   margin: 0;
 }
+/* --- Credentials grid (Education & Development page) --------------------
+   Denser than .principles-grid: three columns on desktop, no numbered
+   index, used for qualifications, awards and certifications where the
+   name of the credential itself is the primary information. */
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+@media (max-width: 60rem) {
+  .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36rem) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.credential {
+  border-top: var(--border-thin);
+  padding-top: var(--space-4);
+}
+
+.credential h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.3;
+}
+
+.credential p {
+  color: var(--colour-ink-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.credential a {
+  color: var(--colour-accent);
+  font-weight: 600;
+}
 
 
