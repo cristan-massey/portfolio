@@ -678,4 +678,16 @@
   color: var(--colour-accent-strong);
 }
 
+/* --- Inline links within thinking-card summaries -------------------------
+   Used where a card references a secondary source inline (e.g. the video
+   interview card which also credits the original interview page). */
+
+.thinking-card-summary a {
+  color: var(--colour-accent);
+  font-weight: 600;
+}
+
+.thinking-card-summary a:hover {
+  color: var(--colour-accent-strong);
+}
 
