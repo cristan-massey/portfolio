@@ -383,22 +383,26 @@
   margin-bottom: var(--space-6);
 }
 
-/* Placeholder mark used until real company logos are supplied.
-   Replace with <img> tags once logo assets are available. */
-.timeline-logo {
-  flex-shrink: 0;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: var(--radius-small);
-  border: 1px solid var(--colour-maroon-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+/* --- Organisation links (Experience page) --------------------------------
+   Replaces the old .timeline-logo image treatment. Each role's organisation
+   name now links out to the company's website, styled consistently with
+   the site's other accent links. */
+
+.timeline-org a,
+.other-role-org a {
   color: var(--colour-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--colour-maroon-600);
+  transition: color var(--duration-standard) var(--ease-standard),
+              border-color var(--duration-standard) var(--ease-standard);
 }
+
+.timeline-org a:hover,
+.other-role-org a:hover {
+  color: var(--colour-accent-strong);
+  border-color: var(--colour-accent-strong);
+}
+
 
 .timeline-panel h2 {
   font-size: 1.4rem;
