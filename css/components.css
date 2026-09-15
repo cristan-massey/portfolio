@@ -1,47 +1,379 @@
 /* ==========================================================================
+   COMPONENTS
+   Reusable UI patterns: navigation, hero, buttons, cards etc.
+   Add new components to this file as the site grows.
+   ========================================================================== */
+
+/* --- Site header / navigation ------------------------------------------ */
+
+.site-header {
+  border-bottom: var(--border-thin);
+}
+
+.site-nav {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: var(--space-6) var(--page-gutter);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.site-name {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--colour-ink);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--colour-ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--colour-accent-strong);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--colour-ink);
+  border-bottom: 2px solid var(--colour-accent);
+  padding-bottom: 2px;
+}
+
+.contact-link {
+  color: var(--colour-accent) !important;
+  font-weight: 700;
+}
+
+/* --- Hero (homepage) ----------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.hero-content {
+  max-width: var(--width-text);
+}
+
+.hero-kicker {
+  color: var(--colour-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.hero h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 900;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.hero-intro {
+  max-width: 42rem;
+  font-size: var(--font-size-lead);
+  font-weight: 400;
+  color: var(--colour-ink-soft);
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--colour-maroon-600);
+  border-radius: var(--radius-medium);
+  object-fit: cover;
+}
+
+/* Stack the hero on narrower screens rather than compressing two columns */
+@media (max-width: 52rem) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    max-width: 20rem;
+  }
+
+}
+
+/* --- Page header (used on interior pages: About, Experience, etc.) ------ */
+
+.page-header {
+  max-width: var(--width-text);
+  margin-bottom: var(--space-16);
+}
+
+.page-kicker {
+  color: var(--colour-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.page-header h1 {
+  font-size: var(--font-size-h2);
+  font-weight: 900;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.page-lead {
+  font-size: var(--font-size-lead);
+  font-weight: 400;
+  color: var(--colour-ink-soft);
+  max-width: 42rem;
+}
+
+/* --- Section heading (reusable across interior page sections) ---------- */
+
+.section-heading {
+  max-width: var(--width-text);
+  margin-bottom: var(--space-8);
+}
+
+.section-heading .eyebrow {
+  color: var(--colour-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.section-heading h2 {
+  font-size: var(--font-size-h3);
+  font-weight: 800;
+  margin: 0;
+}
+
+/* --- Content section spacing --------------------------------------------- */
+
+.content-section {
+  padding-top: var(--space-24);
+  border-top: var(--border-thin);
+}
+
+.content-section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.prose {
+  max-width: var(--width-text);
+  font-size: var(--font-size-lead);
+  color: var(--colour-ink-soft);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Pull statement (large standalone statement mid-page) --------------- */
+
+.pull-statement {
+  max-width: var(--width-text);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--font-size-h3);
+  color: var(--colour-ink);
+  line-height: 1.25;
+}
+
+.pull-statement span {
+  color: var(--colour-accent);
+}
+
+/* --- Principles grid (About page: Principles / Ways of Working) -------- */
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8) var(--space-12);
+}
+
+@media (max-width: 52rem) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principle {
+  border-top: var(--border-thin);
+  padding-top: var(--space-6);
+}
+
+.principle .principle-number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--colour-accent);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+}
+
+.principle h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.principle p {
+  color: var(--colour-ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+/* --- Facets grid (About page: Outside of Work) --------------------------
+   Deliberately lighter-weight styling than .principles-grid: smaller
+   heading, no numbered index. This signals "personal facet" rather than
+   "core leadership principle" without needing icons or imagery. */
+
+.facets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+@media (max-width: 60rem) {
+  .facets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36rem) {
+  .facets-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.facet {
+  border-top: var(--border-thin);
+  padding-top: var(--space-4);
+}
+
+.facet h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.facet p {
+  color: var(--colour-ink-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.facet a {
+  color: var(--colour-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
    EXPERIENCE PAGE COMPONENTS
    Append these to css/components.css
    ========================================================================== */
 
-/* --- Timeline (arrow-navigated career carousel) ------------------------- */
+/* --- Timeline (arrow-navigated career carousel) --------------------------
+   Layout: arrow | content | arrow, using CSS grid so the arrows stay
+   vertically centred against the panel regardless of panel height. */
 
-.timeline-controls {
-  display: flex;
+.timeline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
+  gap: var(--space-8);
+}
+
+.timeline-body {
+  min-width: 0; /* allows content to shrink properly inside the grid track */
 }
 
 .timeline-arrow {
-  width: 2.75rem;
-  height: 2.75rem;
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
-  border: var(--border-thin);
-  background: transparent;
-  color: var(--colour-ink);
-  font-size: 1.1rem;
+  border: 2px solid var(--colour-maroon-600);
+  background: var(--colour-surface);
+  color: var(--colour-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: border-color var(--duration-standard) var(--ease-standard),
-              color var(--duration-standard) var(--ease-standard);
+  transition: background-color var(--duration-standard) var(--ease-standard),
+              color var(--duration-standard) var(--ease-standard),
+              border-color var(--duration-standard) var(--ease-standard),
+              transform var(--duration-standard) var(--ease-standard);
 }
 
-.timeline-arrow:hover {
-  border-color: var(--colour-accent);
-  color: var(--colour-accent);
+.timeline-arrow:hover:not(:disabled) {
+  background: var(--colour-accent-solid);
+  border-color: var(--colour-accent-solid);
+  color: var(--colour-ink);
+  transform: scale(1.05);
 }
 
 .timeline-arrow:disabled {
-  opacity: 0.35;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
 .timeline-position {
-  margin: 0;
+  margin: 0 0 var(--space-6) 0;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--colour-ink-soft);
+  font-weight: 700;
+  color: var(--colour-accent);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+}
+
+/* Stack arrows above/below content on narrow screens rather than
+   squeezing a three-column layout into a small viewport. */
+@media (max-width: 42rem) {
+
+  .timeline {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .timeline-body {
+    order: 2;
+    width: 100%;
+  }
+
+  .timeline-arrow-prev {
+    order: 1;
+  }
+
+  .timeline-arrow-next {
+    order: 3;
+  }
+
 }
 
 .timeline-panel-header {
@@ -167,3 +499,5 @@
   color: var(--colour-ink-soft);
   margin: 0;
 }
+
+
