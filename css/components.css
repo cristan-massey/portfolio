@@ -1,296 +1,169 @@
 /* ==========================================================================
-   COMPONENTS
-   Reusable UI patterns: navigation, hero, buttons, cards etc.
-   Add new components to this file as the site grows.
+   EXPERIENCE PAGE COMPONENTS
+   Append these to css/components.css
    ========================================================================== */
 
-/* --- Site header / navigation ------------------------------------------ */
+/* --- Timeline (arrow-navigated career carousel) ------------------------- */
 
-.site-header {
-  border-bottom: var(--border-thin);
-}
-
-.site-nav {
-  max-width: var(--width-content);
-  margin: 0 auto;
-  padding: var(--space-6) var(--page-gutter);
-
+.timeline-controls {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-}
-
-.site-name {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  color: var(--colour-ink);
-  white-space: nowrap;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
   gap: var(--space-6);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--colour-ink-soft);
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: var(--colour-accent-strong);
-}
-
-.nav-links a[aria-current="page"] {
-  color: var(--colour-ink);
-  border-bottom: 2px solid var(--colour-accent);
-  padding-bottom: 2px;
-}
-
-.contact-link {
-  color: var(--colour-accent) !important;
-  font-weight: 700;
-}
-
-/* --- Hero (homepage) ----------------------------------------------------- */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: var(--space-16);
-  align-items: center;
-}
-
-.hero-content {
-  max-width: var(--width-text);
-}
-
-.hero-kicker {
-  color: var(--colour-accent);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-4);
-}
-
-.hero h1 {
-  font-size: var(--font-size-h1);
-  font-weight: 900;
-  margin: 0 0 var(--space-6) 0;
-}
-
-.hero-intro {
-  max-width: 42rem;
-  font-size: var(--font-size-lead);
-  font-weight: 400;
-  color: var(--colour-ink-soft);
-}
-
-.hero-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 3px solid var(--colour-maroon-600);
-  border-radius: var(--radius-medium);
-  object-fit: cover;
-}
-
-/* Stack the hero on narrower screens rather than compressing two columns */
-@media (max-width: 52rem) {
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-media {
-    max-width: 20rem;
-  }
-
-}
-
-/* --- Page header (used on interior pages: About, Experience, etc.) ------ */
-
-.page-header {
-  max-width: var(--width-text);
-  margin-bottom: var(--space-16);
-}
-
-.page-kicker {
-  color: var(--colour-accent);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-4);
-}
-
-.page-header h1 {
-  font-size: var(--font-size-h2);
-  font-weight: 900;
-  margin: 0 0 var(--space-6) 0;
-}
-
-.page-lead {
-  font-size: var(--font-size-lead);
-  font-weight: 400;
-  color: var(--colour-ink-soft);
-  max-width: 42rem;
-}
-
-/* --- Section heading (reusable across interior page sections) ---------- */
-
-.section-heading {
-  max-width: var(--width-text);
   margin-bottom: var(--space-8);
 }
 
-.section-heading .eyebrow {
+.timeline-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: var(--border-thin);
+  background: transparent;
+  color: var(--colour-ink);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color var(--duration-standard) var(--ease-standard),
+              color var(--duration-standard) var(--ease-standard);
+}
+
+.timeline-arrow:hover {
+  border-color: var(--colour-accent);
   color: var(--colour-accent);
+}
+
+.timeline-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.timeline-position {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--colour-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.timeline-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+/* Placeholder mark used until real company logos are supplied.
+   Replace with <img> tags once logo assets are available. */
+.timeline-logo {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--colour-maroon-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--colour-accent);
+}
+
+.timeline-panel h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.timeline-org {
+  color: var(--colour-ink-soft);
+  font-weight: 600;
+  margin: 0;
+}
+
+.timeline-dates {
+  color: var(--colour-ink-soft);
+  font-size: 0.85rem;
+  margin: var(--space-1) 0 0 0;
+}
+
+.timeline-subheading {
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-3);
+  letter-spacing: 0.08em;
+  color: var(--colour-accent);
+  margin: var(--space-8) 0 var(--space-4) 0;
 }
 
-.section-heading h2 {
-  font-size: var(--font-size-h3);
-  font-weight: 800;
-  margin: 0;
-}
-
-/* --- Content section spacing --------------------------------------------- */
-
-.content-section {
-  padding-top: var(--space-24);
-  border-top: var(--border-thin);
-}
-
-.content-section:first-child {
-  padding-top: 0;
-  border-top: none;
-}
-
-.prose {
+.timeline-list {
   max-width: var(--width-text);
-  font-size: var(--font-size-lead);
+  padding-left: 1.1rem;
   color: var(--colour-ink-soft);
 }
 
-.prose p:last-child {
-  margin-bottom: 0;
-}
-
-/* --- Pull statement (large standalone statement mid-page) --------------- */
-
-.pull-statement {
-  max-width: var(--width-text);
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: var(--font-size-h3);
-  color: var(--colour-ink);
-  line-height: 1.25;
-}
-
-.pull-statement span {
-  color: var(--colour-accent);
-}
-
-/* --- Principles grid (About page: Principles / Ways of Working) -------- */
-
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-8) var(--space-12);
-}
-
-@media (max-width: 52rem) {
-  .principles-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.principle {
-  border-top: var(--border-thin);
-  padding-top: var(--space-6);
-}
-
-.principle .principle-number {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.9rem;
-  color: var(--colour-accent);
+.timeline-list li {
   margin-bottom: var(--space-3);
-  letter-spacing: 0.05em;
+  padding-left: var(--space-2);
 }
 
-.principle h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0 0 var(--space-2) 0;
+/* When JavaScript is unavailable, .no-js on <html> (set only by removing
+   this class via JS on load) keeps every panel visible and stacked, and
+   hides the now-non-functional arrow controls, so no content is lost. */
+.no-js .timeline-panel[hidden] {
+  display: block !important;
 }
 
-.principle p {
-  color: var(--colour-ink-soft);
-  font-size: 0.98rem;
-  margin: 0;
+.no-js .timeline-controls {
+  display: none;
 }
-/* --- Facets grid (About page: Outside of Work) --------------------------
-   Deliberately lighter-weight styling than .principles-grid: smaller
-   heading, no numbered index. This signals "personal facet" rather than
-   "core leadership principle" without needing icons or imagery. */
 
-.facets-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.no-js .timeline-panel {
+  padding-bottom: var(--space-16);
+  margin-bottom: var(--space-16);
+  border-bottom: var(--border-thin);
+}
+
+/* --- Other notable roles (static list) ----------------------------------- */
+
+.other-roles {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-8);
 }
 
-@media (max-width: 60rem) {
-  .facets-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 36rem) {
-  .facets-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.facet {
+.other-role {
   border-top: var(--border-thin);
-  padding-top: var(--space-4);
+  padding-top: var(--space-6);
+  max-width: var(--width-text);
 }
 
-.facet h3 {
-  font-size: 1.05rem;
+.other-role-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.other-role-header h3 {
+  font-size: 1.1rem;
   font-weight: 700;
-  margin: 0 0 var(--space-2) 0;
-}
-
-.facet p {
-  color: var(--colour-ink-soft);
-  font-size: 0.92rem;
   margin: 0;
 }
 
-.facet a {
+.other-role-org {
   color: var(--colour-accent);
   font-weight: 600;
-  text-decoration: underline;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
+.other-role-dates {
+  color: var(--colour-ink-soft);
+  font-size: 0.85rem;
+  margin: var(--space-1) 0 var(--space-3) 0;
+}
+
+.other-role p:not(.other-role-dates) {
+  color: var(--colour-ink-soft);
+  margin: 0;
+}
