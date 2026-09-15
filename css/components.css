@@ -549,7 +549,7 @@
   font-weight: 600;
 }
 /* --- Thinking card grid (Thinking & Speaking page) -----------------------
-   Used for all three sections: Blogs & Whitepapers, Videos, Other.
+   Used across Blogs & Whitepapers, Videos, and Other sections.
    Real, published items use the solid maroon-accented style. Items still
    awaiting content use .thinking-card-placeholder for a visibly different
    dashed treatment, so it's obvious at a glance what needs filling in. */
@@ -628,6 +628,54 @@
 
 .thinking-card-placeholder .thinking-card-topic {
   color: var(--colour-ink-soft);
+}
+
+/* --- Upcoming talk highlight (time-sensitive, sits above the grids) ----- */
+
+.upcoming-card {
+  border: 2px solid var(--colour-maroon-600);
+  border-radius: var(--radius-medium);
+  padding: var(--space-8);
+  background: var(--colour-surface);
+  max-width: var(--width-content);
+}
+
+.upcoming-label {
+  color: var(--colour-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.upcoming-card h2 {
+  font-size: var(--font-size-h3);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.upcoming-meta {
+  color: var(--colour-ink-soft);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.upcoming-summary {
+  color: var(--colour-ink-soft);
+  max-width: var(--width-text);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.upcoming-link a {
+  color: var(--colour-accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--colour-maroon-600);
+}
+
+.upcoming-link a:hover {
+  color: var(--colour-accent-strong);
 }
 
 
