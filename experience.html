@@ -61,22 +61,15 @@
 
             <div class="timeline" data-timeline>
 
-                <!-- Controls -->
-                <div class="timeline-controls">
+                <button type="button" class="timeline-arrow timeline-arrow-prev" data-timeline-prev aria-label="Previous role">
+                    &larr;
+                </button>
 
-                    <button type="button" class="timeline-arrow" data-timeline-prev aria-label="Previous role">
-                        &larr;
-                    </button>
+                <div class="timeline-body">
 
                     <p class="timeline-position" data-timeline-position aria-live="polite">
                         Role 1 of 5
                     </p>
-
-                    <button type="button" class="timeline-arrow" data-timeline-next aria-label="Next role">
-                        &rarr;
-                    </button>
-
-                </div>
 
                 <!-- Panel 1: Pearson -->
                 <article class="timeline-panel" data-timeline-panel>
@@ -223,6 +216,12 @@
                     </ul>
 
                 </article>
+
+                </div>
+
+                <button type="button" class="timeline-arrow timeline-arrow-next" data-timeline-next aria-label="Next role">
+                    &rarr;
+                </button>
 
             </div>
 
