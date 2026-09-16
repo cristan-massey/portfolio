@@ -769,3 +769,54 @@
     justify-content: center;
   }
 }
+
+/* ==========================================================
+   SPEAKER BANNER
+   ========================================================== */
+
+.speaker-banner {
+    margin-bottom: var(--space-16);
+}
+
+.speaker-carousel {
+
+    position: relative;
+
+    height: 600px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-medium);
+
+    border: 3px solid var(--colour-maroon-600);
+
+}
+
+.speaker-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+
+}
+
+.speaker-slide.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+
+    .speaker-carousel {
+        height: 320px;
+    }
+
+}
