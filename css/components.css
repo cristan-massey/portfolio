@@ -691,3 +691,81 @@
   color: var(--colour-accent-strong);
 }
 
+/* CONTACT PAGE: append this block to the end of css/components.css. */
+.contact-page-header {
+  margin-bottom: var(--space-12);
+}
+
+.contact-section {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.contact-panel {
+  max-width: var(--width-text);
+  padding: var(--space-8);
+  border: 2px solid var(--colour-maroon-600);
+  border-radius: var(--radius-medium);
+  background: var(--colour-surface);
+}
+
+.contact-label {
+  margin: 0 0 var(--space-3) 0;
+  color: var(--colour-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-panel h2 {
+  margin: 0 0 var(--space-4) 0;
+  font-size: var(--font-size-h3);
+}
+
+.contact-panel > p:not(.contact-label) {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--colour-ink-soft);
+  font-size: var(--font-size-lead);
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  padding: var(--space-4) var(--space-6);
+  border: 2px solid var(--colour-maroon-600);
+  border-radius: var(--radius-medium);
+  background: var(--colour-accent-solid);
+  color: var(--colour-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-standard) var(--ease-standard),
+    border-color var(--duration-standard) var(--ease-standard),
+    transform var(--duration-standard) var(--ease-standard);
+}
+
+.linkedin-button:hover {
+  background: var(--colour-accent-solid-hover);
+  border-color: var(--colour-accent-strong);
+  transform: translateY(-2px);
+}
+
+.linkedin-button:focus-visible {
+  outline: 3px solid var(--colour-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 36rem) {
+  .contact-panel {
+    padding: var(--space-6);
+  }
+
+  .linkedin-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
