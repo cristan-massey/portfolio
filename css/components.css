@@ -770,53 +770,102 @@
   }
 }
 
-/* ==========================================================
-   SPEAKER BANNER
-   ========================================================== */
+/* ==========================================================================
+   SPEAKER CAROUSEL (Thinking & Speaking page)
+   Shows one image at a time, cross-fading between them.
+   Arrows sit over the image. Counter sits bottom right.
+   ========================================================================== */
 
 .speaker-banner {
-    margin-bottom: var(--space-16);
+  margin-bottom: var(--space-16);
 }
 
 .speaker-carousel {
-
-    position: relative;
-
-    height: 600px;
-
-    overflow: hidden;
-
-    border-radius: var(--radius-medium);
-
-    border: 3px solid var(--colour-maroon-600);
-
+  position: relative;
+  height: 30rem;
+  overflow: hidden;
+  border: 3px solid var(--colour-maroon-600);
+  border-radius: var(--radius-medium);
+  background: var(--colour-surface);
 }
 
 .speaker-slide {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    opacity: 0;
-
-    transition: opacity 1s ease;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 800ms var(--ease-standard);
 }
 
 .speaker-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-@media (max-width: 768px) {
-
-    .speaker-carousel {
-        height: 320px;
-    }
-
+.speaker-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--colour-maroon-600);
+  border-radius: 50%;
+  background: rgba(14, 13, 13, 0.75);
+  color: var(--colour-accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-standard) var(--ease-standard),
+    color var(--duration-standard) var(--ease-standard);
 }
+
+.speaker-carousel-control:hover {
+  background: var(--colour-accent-solid);
+  color: var(--colour-ink);
+}
+
+.speaker-carousel-control:focus-visible {
+  outline: 3px solid var(--colour-focus);
+  outline-offset: 2px;
+}
+
+.speaker-carousel-prev {
+  left: var(--space-4);
+}
+
+.speaker-carousel-next {
+  right: var(--space-4);
+}
+
+.speaker-carousel-status {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 2;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-small);
+  background: rgba(14, 13, 13, 0.75);
+  color: var(--colour-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 48rem) {
+  .speaker-carousel {
+    height: 18rem;
+  }
+
+  .speaker-carousel-control {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
