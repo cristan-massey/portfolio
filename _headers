@@ -4,10 +4,10 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/assets/css/*
+/css/*
   Cache-Control: public, max-age=3600
 
-/assets/js/*
+/js/*
   Cache-Control: public, max-age=3600
 
 /assets/images/*
