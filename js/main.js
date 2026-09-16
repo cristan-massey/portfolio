@@ -65,3 +65,30 @@ console.log("Site scripts loaded.");
   showPanel(currentIndex);
 
 })();
+/* ==========================================================
+   SPEAKER CAROUSEL
+   ========================================================== */
+
+const speakerSlides = document.querySelectorAll('.speaker-slide');
+
+let currentSpeakerSlide = 0;
+
+if (speakerSlides.length > 0) {
+
+    setInterval(() => {
+
+        speakerSlides[currentSpeakerSlide]
+            .classList.remove('active');
+
+        currentSpeakerSlide++;
+
+        if (currentSpeakerSlide >= speakerSlides.length) {
+            currentSpeakerSlide = 0;
+        }
+
+        speakerSlides[currentSpeakerSlide]
+            .classList.add('active');
+
+    }, 5000);
+
+}
